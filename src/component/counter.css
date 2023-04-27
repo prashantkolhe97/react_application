@@ -1,0 +1,22 @@
+div{
+    align-items: center;
+    background-color: rgb(52, 232, 245);
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.button1{
+    background-color: rgb(243, 146, 108);
+    margin-left: 20px;
+    padding: 4%;
+    border-radius: 20px;
+    text-decoration: solid;
+    font-size: larger;
+}
+
+.text{
+    text-decoration: solid;
+    font-size:xx-large;
+    border-radius: 10%;
+}
