@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Counter from './component/counter';
+import Useref from './component/useref';
 function App() {
   return(
     <>
-    <Counter/>
+    <Useref/>
     </>
   )
 }
