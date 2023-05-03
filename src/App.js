@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Useref from './component/useref';
+import FetchData from './component/list';
 function App() {
   return(
     <>
-    <Useref/>
+    <FetchData/>
     </>
   )
 }
