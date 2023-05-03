@@ -1,29 +1,53 @@
-import React ,{useEffect, useState} from 'react'
+import React, { useState } from 'react';
+import './user.css'
 
-function FetchData()
+
+ function CardMaking()
 {
-    const [ image,setImage]=useState('')
-
-    useEffect(()=>
-    {
-    fetch('https://dog.ceo/api/breeds/image/random')
-    .then((data)=> data.json())
-    .then ((response)=> setImage(response.message))
-    .catch((error) => console.log(error))  
+    const [index,setIndex]=useState(0)
+    const [people,setPeople]=useState([])
 
 
-    },[])
-
-    return(
-        <img src={image} 
-        style={{height : "300px",
-         width : "300px",
-        marginTop:"120px",
-        borderRadius:"20px",
-        boxShadow: " rgba(0, 0, 0, 0.56) 0px 22px 70px 4px",
-    alignItems:'center'}}/>
+   async function handleclick()
+   {  
+    
+    try{
+        const response= await fetch('https://reqres.in/api/users/')
+        const Data= await response.json()
         
-    )
-}
+        if(index==6)
+    {
+    setIndex(0)
+    }
+    else
+    {
+        setIndex(index+1)
+        setPeople(Data.data[index])
+        
+    }
+        
+    
+     }
+     catch(error){
+         console.log('i am from catch' ,error)
+     }}
 
-export default FetchData
+
+
+     return(
+        <div className='App'>
+        <div className='CardPara'>
+            <img src={people.avatar}/>
+            <p className='para'>ID={people.id}</p>
+            <p className='para'>Email={people.email}</p>
+            <p className='para'>FirstName={people.first_name}</p>
+            <p className='para'>LastName={people.last_name}</p>   
+        </div>
+         <button className="btn" onClick={handleclick}>Get users</button>
+         </div>
+     );
+
+
+  
+}
+export default CardMaking

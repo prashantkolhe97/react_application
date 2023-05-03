@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import FetchData from './component/list';
+import CardMaking from './component/list';
 function App() {
-  return(
-    <>
-    <FetchData/>
-    </>
-  )
+  return (
+    <div className="App">
+      <CardMaking/>
+    </div>
+  );
 }
 
 export default App;
