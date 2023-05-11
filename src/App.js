@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import CardMaking from './component/list';
+import Card from './component/Card';
 function App() {
   return (
     <div className="App">
-      <CardMaking/>
+       <Card/> 
     </div>
   );
 }
